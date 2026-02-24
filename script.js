@@ -258,8 +258,18 @@ const translations = [
     { sel: '.nav-links li:nth-child(5) a', mr: 'ब्रँड्स', en: 'Brands' },
     { sel: '.nav-cta', mr: 'कोर्स जॉइन करा', en: 'Join Course' },
 
+    // Global / Common
+    { sel: '.loader-text', mr: 'सुशांत घाडगे', en: 'Sushant Ghadge' },
+    { sel: '.nav-logo', mr: '<span class="logo-icon">🎬</span> सुशांत घाडगे', en: '<span class="logo-icon">🎬</span> Sushant Ghadge' },
+    { sel: 'a[href="#home"]', mr: 'होम', en: 'Home' },
+    { sel: 'a[href="#about"]', mr: 'माझ्याबद्दल', en: 'About Me' },
+    { sel: 'a[href="#video"]', mr: 'व्हिडिओ', en: 'Video' },
+    { sel: 'a[href="#course"]', mr: 'कोर्स', en: 'Course' },
+    { sel: 'a[href="#brands"]', mr: 'ब्रँड्स', en: 'Brands' },
+    { sel: 'a[href="#faq"]', mr: 'FAQ', en: 'FAQ' },
+    { sel: '.nav-cta', mr: 'कोर्स जॉइन करा', en: 'Join Course' },
+
     // Hero
-    { sel: '.badge-text', mr: 'नवीन कोर्स लाँच!', en: 'New Course Launch!' },
     { sel: '.hero-line-1', mr: 'तुमच्यातील क्रिएटरला', en: 'Give Your Inner Creator' },
     { sel: '.hero-line-2', mr: 'प्रोफेशनल दिशा द्या', en: 'A Professional Direction' },
     { sel: '.hero .subtitle', mr: 'मराठीतून शिका कंटेंट तयार करणं — व्हिडिओ प्रोडक्शन, एडिटिंग, ब्रँड डील्स आणि बरंच काही. भारतातील टॉप ब्रँड्ससोबत काम केलेल्या सुशांत घाडगे यांच्याकडून थेट शिका.', en: 'Learn content creation in Marathi — video production, editing, brand deals and much more. Learn directly from Sushant Ghadge who has worked with India\'s top brands.' },
@@ -270,14 +280,27 @@ const translations = [
     { sel: '.about-lead', mr: 'सुशांत घाडगे — एक अभिनेता, फिल्ममेकर, आणि मराठी डिजिटल कंटेंटमधील अग्रगण्य नाव. Amazon Prime Video वरील <strong>"Sharmajee Ki Beti"</strong> मध्ये अभिनय केलेल्या सुशांतने कंटेंट क्रिएशनच्या जगात स्वतःचं एक वेगळं स्थान निर्माण केलं आहे.', en: 'Sushant Ghadge — an actor, filmmaker, and a leading name in Marathi digital content. Having acted in <strong>"Sharmajee Ki Beti"</strong> on Amazon Prime Video, Sushant has carved a unique niche in the world of content creation.' },
     { sel: '.about-intro-text p:nth-of-type(2)', mr: 'गेल्या काही वर्षांत त्यांनी <strong>1,000 पेक्षा जास्त व्हिडिओज</strong> तयार करून <strong>2 बिलियन+ व्ह्यूज</strong> मिळवले आहेत. भारतातील सर्वात मोठ्या ब्रँड्ससोबत — Prime Video, Disney Hotstar, Zomato, Cred, Realme सोबत यशस्वी कोलॅबोरेशन्स केले आहेत.', en: 'Over the past few years, he has created <strong>over 1,000 videos</strong> and garnered <strong>2 billion+ views</strong>. He has successfully collaborated with some of India\'s biggest brands — Prime Video, Disney Hotstar, Zomato, Cred, Realme.' },
     { sel: '.about-intro-text p:nth-of-type(3)', mr: '500K+ लोकांचा कम्युनिटी उभा करून सुशांत आज हजारो तरुणांना कंटेंट क्रिएशनची प्रोफेशनल दिशा देत आहेत. आता ते त्यांचा संपूर्ण अनुभव या कोर्सद्वारे तुमच्यापर्यंत आणत आहेत.', en: 'Having built a community of 500K+ people, Sushant is now providing professional direction in content creation to thousands of youth. He is now bringing his entire experience to you through this course.' },
+    { sel: '.follow-btn span', mr: 'Instagram वर Follow करा', en: 'Follow on Instagram' },
 
-    // Section headers
+    // Video section
     { sel: '.video-section .section-title', mr: 'कोर्स बद्दल जाणून घ्या', en: 'Learn About the Course' },
     { sel: '.video-section .section-subtitle', mr: 'सुशांत यांच्या तोंडून ऐका — हा कोर्स कशासाठी आहे, तुम्हाला काय शिकायला मिळेल आणि तुमचं आयुष्य कसं बदलू शकतं.', en: 'Hear from Sushant — what this course is about, what you\'ll learn, and how it can change your life.' },
+    { sel: '.video-thumbnail span:nth-of-type(2)', mr: 'व्हिडिओ लवकरच येत आहे...', en: 'Video coming soon...' },
+
+    // Course section
     { sel: '.course-section .section-title', mr: 'कंटेंट क्रिएशन मास्टर कोर्स', en: 'Content Creation Master Course' },
     { sel: '.course-section .section-subtitle', mr: 'मराठीतून शिका कंटेंट कसा तयार करायचा — शून्यापासून ते प्रो लेव्हलपर्यंत', en: 'Learn how to create content in Marathi — from zero to pro level' },
+    { sel: '.course-feature:nth-child(1) span', mr: 'व्हिडिओ स्क्रिप्टिंग आणि स्टोरीटेलिंग', en: 'Video Scripting & Storytelling' },
+    { sel: '.course-feature:nth-child(2) span', mr: 'प्रोफेशनल व्हिडिओ शूटिंग', en: 'Professional Video Shooting' },
+    { sel: '.course-feature:nth-child(3) span', mr: 'एडिटिंग मास्टरक्लास', en: 'Editing Masterclass' },
+    { sel: '.course-feature:nth-child(4) span', mr: 'ब्रँड कोलॅबोरेशन कसं करायचं', en: 'How to do Brand Collaboration' },
+    { sel: '.course-feature:nth-child(5) span', mr: 'सोशल मीडिया ग्रोथ स्ट्रॅटेजी', en: 'Social Media Growth Strategy' },
+    { sel: '.course-feature:nth-child(6) span', mr: 'मोनेटायझेशन — पैसे कसे कमवायचे', en: 'Monetization — How to Earn Money' },
+    { sel: '.course-feature:nth-child(7) span', mr: 'रील्स, शॉर्ट्स आणि लॉन्ग फॉर्म कंटेंट', en: 'Reels, Shorts & Long-form Content' },
+    { sel: '.course-feature:nth-child(8) span', mr: 'लाइव्ह Q&A सेशन्स सुशांतसोबत', en: 'Live Q&A Sessions with Sushant' },
     { sel: '.brands-section .section-title', mr: 'ज्या ब्रँड्ससोबत काम केलं', en: 'Brands Worked With' },
     { sel: '.brands-section .section-subtitle', mr: 'भारतातील सर्वात मोठ्या ब्रँड्ससोबत कंटेंट तयार केला', en: 'Created content with India\'s biggest brands' },
+    { sel: '.brands-counter-label', mr: 'ब्रँड कोलॅबोरेशन्स', en: 'Brand Collaborations' },
     // Testimonials
     { sel: '.testimonials-section .section-title', mr: 'विद्यार्थ्यांचे अनुभव', en: 'Student Experiences' },
     { sel: '.testimonials-section .section-subtitle', mr: 'ज्यांनी सुशांत यांच्याकडून शिकलं त्यांच्या प्रतिक्रिया', en: 'Feedback from those who learned from Sushant' },
@@ -290,6 +313,9 @@ const translations = [
     { sel: '.testimonials-grid .testimonial-card:nth-child(3) .testimonial-text', mr: '"ब्रँड डील्स कशा मिळवायच्या हे सुशांत सरांनी इतक्या सोप्या पद्धतीने शिकवलं की आता मी दर महिन्याला ब्रँड कोलॅबोरेशन करतो."', en: '"Sushant sir taught how to get brand deals in such a simple way that now I do brand collaborations every month."' },
     { sel: '.testimonials-grid .testimonial-card:nth-child(3) .author-name', mr: 'राहुल जाधव', en: 'Rahul Jadhav' },
     { sel: '.testimonials-grid .testimonial-card:nth-child(3) .author-role', mr: 'Instagram Creator', en: 'Instagram Creator' },
+    { sel: '.testimonials-grid .testimonial-card:nth-child(1) .author-avatar', mr: 'प', en: 'P' },
+    { sel: '.testimonials-grid .testimonial-card:nth-child(2) .author-avatar', mr: 'स', en: 'S' },
+    { sel: '.testimonials-grid .testimonial-card:nth-child(3) .author-avatar', mr: 'र', en: 'R' },
 
     // FAQ
     { sel: '.faq-section .section-title', mr: 'वारंवार विचारले जाणारे प्रश्न', en: 'Frequently Asked Questions' },
@@ -322,6 +348,7 @@ const translations = [
     { sel: '.footer-links:nth-of-type(1) a[href="#faq"]', mr: 'FAQ', en: 'FAQ' },
     { sel: '.footer-links:nth-of-type(2) h4', mr: 'संपर्क', en: 'Contact' },
     { sel: '.footer-links:nth-of-type(2) a[href^="mailto"]', mr: 'ईमेल', en: 'Email' },
+    { sel: '.footer-links:nth-of-type(2) a[href="#"]', mr: 'YouTube', en: 'YouTube' },
     { sel: '.footer-bottom', mr: '&copy; 2026 सुशांत घाडगे. सर्व हक्क राखीव.', en: '&copy; 2026 Sushant Ghadge. All rights reserved.' },
 ];
 
@@ -338,10 +365,12 @@ if (langToggle) {
 
         // Apply translations
         translations.forEach(t => {
-            const el = document.querySelector(t.sel);
-            if (el) {
-                el.innerHTML = t[currentLang];
-            }
+            const elements = document.querySelectorAll(t.sel);
+            elements.forEach(el => {
+                if (el) {
+                    el.innerHTML = t[currentLang];
+                }
+            });
         });
 
         // Handle hero buttons separately (they have child elements)
