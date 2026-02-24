@@ -844,9 +844,9 @@ section {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 72px;
-  align-items: center;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  align-items: start;
   position: relative;
   z-index: 1;
 }
@@ -899,94 +899,105 @@ section {
   z-index: -1;
 }
 
-/* About Stats Grid */
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin: 40px 0;
-}
-
-.stat-box {
+/* About Stats Strip */
+.about-stats-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 28px 0;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 24px;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
-.stat-box::before {
+.about-stats-strip::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top right, rgba(255, 107, 53, 0.1), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 107, 53, 0.04) 0%, transparent 50%, rgba(168, 85, 247, 0.03) 100%);
+  pointer-events: none;
 }
 
-.stat-box:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 107, 53, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 107, 53, 0.1);
+.stat-strip-item {
+  flex: 1;
+  text-align: center;
+  padding: 4px 8px;
 }
 
-.stat-box:hover::before {
-  opacity: 1;
-}
-
-.stat-number-wrapper {
+.stat-strip-number {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  margin-bottom: 8px;
+  gap: 2px;
+  margin-bottom: 4px;
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  color: #fff;
   font-family: var(--font-english);
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  line-height: 1.1;
+  animation: statPulse 3s ease-in-out infinite;
 }
 
-.stat-plus {
-  font-size: 1.5rem;
+.stat-suffix {
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--accent-orange);
-  margin-left: 2px;
+  font-family: var(--font-english);
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+.stat-strip-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  font-family: var(--font-english);
 }
 
-@media (min-width: 1200px) {
-  .about-stats {
-    grid-template-columns: repeat(4, 1fr);
+.stat-strip-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 107, 53, 0.4), transparent);
+  flex-shrink: 0;
+}
+
+@keyframes statPulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 4px rgba(255, 107, 53, 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.6));
   }
 }
 
 @media (max-width: 576px) {
-  .about-stats {
-    grid-template-columns: 1fr;
+  .about-stats-strip {
+    flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
+  }
+
+  .stat-strip-divider {
+    display: none;
+  }
+
+  .stat-strip-item {
+    flex: 0 0 40%;
   }
 }
 
@@ -1064,31 +1075,30 @@ section {
 }
 
 .about-intro-text {
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   position: relative;
   background: rgba(255, 255, 255, 0.02);
-  padding: 30px;
-  border-radius: 24px;
+  padding: 20px 22px;
+  border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
 }
 
 .about-lead {
-  font-size: 1.15rem !important;
+  font-size: 0.98rem !important;
   color: #fff !important;
-  line-height: 2;
-  margin-bottom: 24px;
+  line-height: 1.85;
+  margin-bottom: 16px;
   position: relative;
-  padding-left: 24px;
-  border-left: 4px solid var(--accent-orange);
+  padding-left: 18px;
+  border-left: 3px solid var(--accent-orange);
   font-weight: 500;
 }
 
 .about-content p {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 2;
-  margin-bottom: 20px;
+  line-height: 1.85;
+  margin-bottom: 14px;
 }
 
 .about-content p:last-child {
@@ -1098,8 +1108,8 @@ section {
 .about-content p strong {
   color: #fff;
   font-weight: 700;
-  background: linear-gradient(120deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 107, 53, 0.1) 100%);
-  padding: 2px 6px;
+  background: linear-gradient(120deg, rgba(255, 107, 53, 0.18) 0%, rgba(255, 107, 53, 0.08) 100%);
+  padding: 1px 5px;
   border-radius: 4px;
 }
 
@@ -2385,9 +2395,10 @@ section {
 /* ===== SCROLL REVEAL ANIMATIONS ===== */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(60px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.revealed {
@@ -2398,9 +2409,10 @@ section {
 /* Slide in from left */
 .reveal-left {
   opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-70px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal-left.revealed {
@@ -2411,9 +2423,10 @@ section {
 /* Slide in from right */
 .reveal-right {
   opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(70px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal-right.revealed {
@@ -2424,9 +2437,10 @@ section {
 /* Scale in */
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.88) translateY(20px);
-  transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.9s cubic-bezier(0.34, 1.2, 0.64, 1);
+  transform: scale(0.85) translateY(30px);
+  transition:
+    opacity 0.85s cubic-bezier(0.34, 1.2, 0.64, 1),
+    transform 0.85s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 
 .reveal-scale.revealed {

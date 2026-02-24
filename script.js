@@ -74,6 +74,14 @@ document.querySelectorAll('.faq-question').forEach(question => {
 // ===== SCROLL REVEAL ANIMATION =====
 const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
 
+// Apply stagger delays from data attribute
+revealElements.forEach(el => {
+    const delay = el.dataset.revealDelay;
+    if (delay) {
+        el.style.transitionDelay = `${delay}ms`;
+    }
+});
+
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -82,8 +90,8 @@ const revealObserver = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -30px 0px'
 });
 
 revealElements.forEach(el => revealObserver.observe(el));
@@ -352,7 +360,7 @@ const translations = [
 
     // Footer
     { sel: '.footer-brand h3', mr: 'सुशांत घाडगे', en: 'Sushant Ghadge' },
-    { sel: '.footer-brand p', mr: 'कंटेंट क्रिएटर, फिल्ममेकर, अभिनेता आणि मेंटॉर. भारतातील 25+ ब्रँड्ससोबत काम केलेल्या सुशांत घाडगे यांच्याकडून शिका.', en: 'Content Creator, Filmmaker, Actor and Mentor. Learn from Sushant Ghadge who has worked with 25+ brands in India.' },
+    { sel: '.footer-brand p', mr: 'कंटेंट क्रिएटर, फिल्ममेकर, अभिनेता आणि मेंटॉर. भारतातील 150+ ब्रँड्ससोबत काम केलेल्या सुशांत घाडगे यांच्याकडून शिका.', en: 'Content Creator, Filmmaker, Actor and Mentor. Learn from Sushant Ghadge who has worked with 150+ brands in India.' },
     { sel: '.footer-links:nth-of-type(1) h4', mr: 'लिंक्स', en: 'Links' },
     { sel: '.footer-links:nth-of-type(1) a[href="#home"]', mr: 'होम', en: 'Home' },
     { sel: '.footer-links:nth-of-type(1) a[href="#about"]', mr: 'माझ्याबद्दल', en: 'About Me' },
