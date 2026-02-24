@@ -43,6 +43,11 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#course" class="nav-cta">कोर्स जॉइन करा</a></li>
       </ul>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Switch Language" title="Switch Language">
+        <span class="lang-option lang-mr active">मरा</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option lang-en">EN</span>
+      </button>
       <button class="hamburger" aria-label="Menu">
         <span></span>
         <span></span>
@@ -55,14 +60,6 @@
   <section class="hero" id="home">
     <!-- Floating Particles -->
     <div class="hero-particles" id="hero-particles"></div>
-    <!-- Animated circles -->
-    <div class="hero-bg-animation">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
-    <!-- Grid overlay -->
-    <div class="hero-grid-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">
         <span class="dot"></span>
@@ -70,8 +67,8 @@
         <span class="badge-arrow">→</span>
       </div>
       <h1>
-        <span class="hero-line hero-line-1">कंटेंट क्रिएशनचा</span><br>
-        <span class="hero-line hero-line-2 gradient-text" id="typewriter-text">मास्टर कोर्स</span>
+        <span class="hero-line hero-line-1">तुमच्यातील क्रिएटरला</span><br>
+        <span class="hero-line hero-line-2 gradient-text">प्रोफेशनल दिशा द्या</span>
       </h1>
       <p class="subtitle">
         मराठीतून शिका कंटेंट तयार करणं — व्हिडिओ प्रोडक्शन, एडिटिंग, ब्रँड डील्स आणि बरंच काही. भारतातील टॉप ब्रँड्ससोबत
@@ -96,138 +93,86 @@
     </div>
   </section>
 
-  <!-- ===== TRUST RIBBON ===== -->
-  <section class="trust-ribbon">
-    <div class="container">
-      <div class="trust-items">
-        <div class="trust-item">
-          <span class="trust-icon">🎥</span>
-          <span class="trust-text">1000+ व्हिडिओज</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">👁️</span>
-          <span class="trust-text">2 Billion+ व्ह्यूज</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🤝</span>
-          <span class="trust-text">25+ ब्रँड्स</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">👥</span>
-          <span class="trust-text">500K+ कम्युनिटी</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🎬</span>
-          <span class="trust-text">फिल्ममेकर & अभिनेता</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== ABOUT SECTION ===== -->
   <section class="about" id="about">
+    <!-- Section glow accents -->
+    <div class="section-glow section-glow-left"></div>
+    <div class="section-glow section-glow-right"></div>
+
     <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">About</span>
+        <h2 class="section-title">सुशांत घाडगे कोण आहेत?</h2>
+        <p class="section-subtitle">मराठी कंटेंट क्रिएशन इंडस्ट्रीतील सर्वात प्रभावशाली नावांपैकी एक</p>
+      </div>
+
       <div class="about-grid">
-        <div class="about-image-wrapper reveal">
-          <div class="about-image" style="
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-            width: 100%;
-            aspect-ratio: 4/5;
-            border-radius: 24px;
-            border: 2px solid rgba(255,255,255,0.08);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-            position: relative;
-            overflow: hidden;
-          ">
-            <div style="
-              position: absolute;
-              inset: 0;
-              background: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(255,215,0,0.1));
-            "></div>
-            <span style="position:relative;z-index:1;">🎬</span>
+        <div class="about-image-wrapper reveal-left">
+          <div class="about-image-card">
+            <div class="about-image" style="
+              background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 50%, #0f3460 100%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 8rem;
+              width: 100%;
+              aspect-ratio: 4/5;
+              border-radius: 24px;
+              position: relative;
+              overflow: hidden;
+            ">
+              <div style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(135deg, rgba(255,107,53,0.12), rgba(168,85,247,0.08));
+              "></div>
+              <span style="position:relative;z-index:1;">🎬</span>
+            </div>
+            <!-- Animated border glow -->
+            <div class="about-image-border-glow"></div>
           </div>
           <div class="about-image-glow"></div>
-          <!-- Floating badges around image -->
-          <div class="about-float-badge badge-top-right">
-            <span>🏆</span> 25+ ब्रँड्स
+
+          <!-- Stats floating cards -->
+          <div class="about-stat-float stat-float-1 reveal">
+            <div class="stat-float-number">2B+</div>
+            <div class="stat-float-label">Total Views</div>
           </div>
-          <div class="about-float-badge badge-bottom-left">
-            <span>🎥</span> 1000+ व्हिडिओज
+          <div class="about-stat-float stat-float-2 reveal">
+            <div class="stat-float-number">1000+</div>
+            <div class="stat-float-label">Videos Created</div>
           </div>
-          <!-- Instagram stats badge -->
-          <div class="about-float-badge badge-bottom-right">
-            <span>📷</span> 200K+ Followers
+          <div class="about-stat-float stat-float-3 reveal">
+            <div class="stat-float-number">25+</div>
+            <div class="stat-float-label">Brand Deals</div>
           </div>
         </div>
-        <div class="about-content reveal reveal-delay-2">
-          <span class="section-tag">About</span>
-          <h2>सुशांत घाडगे</h2>
-          <!-- Role tags -->
+
+        <div class="about-content reveal-right reveal-delay-1">
+          <div class="about-intro-text">
+            <p class="about-lead">
+              सुशांत घाडगे — एक अभिनेता, फिल्ममेकर, आणि मराठी डिजिटल कंटेंटमधील अग्रगण्य नाव. Amazon Prime Video वरील
+              <strong>"Sharmajee Ki Beti"</strong> मध्ये अभिनय केलेल्या सुशांतने कंटेंट क्रिएशनच्या जगात स्वतःचं एक
+              वेगळं स्थान निर्माण केलं आहे.
+            </p>
+            <p>
+              गेल्या काही वर्षांत त्यांनी <strong>1,000 पेक्षा जास्त व्हिडिओज</strong> तयार करून <strong>2 बिलियन+
+                व्ह्यूज</strong> मिळवले आहेत. भारतातील सर्वात मोठ्या ब्रँड्ससोबत — Prime Video, Disney Hotstar, Zomato,
+              Cred, Realme सोबत यशस्वी कोलॅबोरेशन्स केले आहेत.
+            </p>
+            <p>
+              500K+ लोकांचा कम्युनिटी उभा करून सुशांत आज हजारो तरुणांना कंटेंट क्रिएशनची प्रोफेशनल दिशा देत आहेत. आता ते
+              त्यांचा संपूर्ण अनुभव या कोर्सद्वारे तुमच्यापर्यंत आणत आहेत.
+            </p>
+          </div>
+
+          <!-- Role pills -->
           <div class="about-role-tags">
             <span class="role-tag">🎬 Actor</span>
             <span class="role-tag">📹 Content Creator</span>
             <span class="role-tag">🎥 Filmmaker</span>
-            <span class="role-tag">🎭 रंगभूमी कलाकार</span>
+            <span class="role-tag">🎭 Theatre Artist</span>
             <span class="role-tag">🧑‍🏫 Mentor</span>
-          </div>
-          <p>
-            सुशांत घाडगे हे एक बहुमुखी प्रतिभावान कलाकार आहेत — Actor, Content Creator, Filmmaker, रंगभूमी कलाकार आणि
-            Mentor.
-            त्यांनी कंटेंट क्रिएशनपासून त्यांचा प्रवास सुरू केला, जिथे त्यांनी 1000 पेक्षा जास्त व्हिडिओज तयार केले,
-            2 बिलियनपेक्षा जास्त व्ह्यूज मिळवले आणि 5 लाख लोकांचा कम्युनिटी तयार केला.
-          </p>
-          <p>
-            भारतातील 25+ टॉप ब्रँड्ससोबत त्यांनी काम केलं आहे. Prime Video वरील <strong>"Sharmajee Ki Beti"</strong> या
-            प्रोजेक्टमध्ये त्यांनी अभिनय केला आहे. Instagram वर 200K+ followers आणि 968+ posts सोबत, ते मराठी
-            कंटेंट क्रिएशन क्षेत्रातील एक प्रमुख नाव आहेत.
-          </p>
-
-          <!-- Achievements timeline -->
-          <div class="about-achievements">
-            <div class="achievement-item">
-              <div class="achievement-dot"></div>
-              <div class="achievement-content">
-                <span class="achievement-title">🎬 "Sharmajee Ki Beti" — Prime Video</span>
-                <span class="achievement-desc">अभिनेता म्हणून Prime Video वर काम</span>
-              </div>
-            </div>
-            <div class="achievement-item">
-              <div class="achievement-dot"></div>
-              <div class="achievement-content">
-                <span class="achievement-title">🏆 25+ Brand Collaborations</span>
-                <span class="achievement-desc">भारतातील टॉप ब्रँड्ससोबत कंटेंट</span>
-              </div>
-            </div>
-            <div class="achievement-item">
-              <div class="achievement-dot"></div>
-              <div class="achievement-content">
-                <span class="achievement-title">📷 200K+ Instagram Community</span>
-                <span class="achievement-desc">968+ posts, active content creator</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-highlights">
-            <div class="highlight-card">
-              <div class="number">1000+</div>
-              <div class="label">व्हिडिओज तयार केले</div>
-            </div>
-            <div class="highlight-card">
-              <div class="number">2B+</div>
-              <div class="label">एकूण व्ह्यूज</div>
-            </div>
-            <div class="highlight-card">
-              <div class="number">200K+</div>
-              <div class="label">Instagram Followers</div>
-            </div>
-            <div class="highlight-card">
-              <div class="number">25+</div>
-              <div class="label">ब्रँड कोलॅबोरेशन</div>
-            </div>
           </div>
 
           <!-- Follow CTA -->
@@ -252,32 +197,35 @@
         <p class="section-subtitle">सुशांत यांच्या तोंडून ऐका — हा कोर्स कशासाठी आहे, तुम्हाला काय शिकायला मिळेल आणि
           तुमचं आयुष्य कसं बदलू शकतं.</p>
       </div>
-      <div class="video-wrapper reveal reveal-delay-1" data-video-id="">
-        <!-- Thumbnail placeholder — replace with actual YouTube thumbnail -->
-        <div class="video-thumbnail" style="
-          width: 100%;
-          aspect-ratio: 16/9;
-          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a1a2e 100%);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 16px;
-          position: relative;
-          overflow: hidden;
-        ">
-          <div style="
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,107,53,0.08), transparent 50%, rgba(255,215,0,0.08));
-          "></div>
-          <span style="font-size: 4rem; position: relative; z-index: 1;">🎥</span>
-          <span
-            style="font-size: 1.1rem; color: #a0a0b0; position: relative; z-index: 1; font-family: 'Noto Sans Devanagari', sans-serif;">व्हिडिओ
-            लवकरच येत आहे...</span>
+      <div class="video-outer-glow reveal-scale reveal-delay-1">
+        <div class="video-wrapper" data-video-id="">
+          <!-- Thumbnail placeholder — replace with actual YouTube thumbnail -->
+          <div class="video-thumbnail" style="
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a1a2e 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+          ">
+            <div style="
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(135deg, rgba(255,107,53,0.08), transparent 50%, rgba(255,215,0,0.08));
+            "></div>
+            <span style="font-size: 4rem; position: relative; z-index: 1;">🎥</span>
+            <span
+              style="font-size: 1.1rem; color: #a0a0b0; position: relative; z-index: 1; font-family: 'Noto Sans Devanagari', sans-serif;">व्हिडिओ
+              लवकरच येत आहे...</span>
+          </div>
+          <div class="video-play-btn"></div>
+          <div class="video-play-pulse"></div>
+          <div class="video-play-pulse-2"></div>
         </div>
-        <div class="video-play-btn"></div>
-        <div class="video-play-pulse"></div>
       </div>
     </div>
   </section>
@@ -290,7 +238,7 @@
         <h2 class="section-title">कंटेंट क्रिएशन मास्टर कोर्स</h2>
         <p class="section-subtitle">मराठीतून शिका कंटेंट कसा तयार करायचा — शून्यापासून ते प्रो लेव्हलपर्यंत</p>
       </div>
-      <div class="course-card reveal reveal-delay-1">
+      <div class="course-card reveal-scale reveal-delay-1">
         <div class="course-card-glow"></div>
         <div class="course-card-inner">
           <div class="course-badge">🔥 लिमिटेड सीट्स</div>
