@@ -107,49 +107,52 @@ if (videoWrapper) {
 }
 
 // ===== COUNTER ANIMATION =====
-const counters = document.querySelectorAll('.stat-number, .highlight-card .number');
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            counterObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
+function initCounters() {
+    const counters = document.querySelectorAll('.stat-number, .highlight-card .number');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
 
-counters.forEach(el => counterObserver.observe(el));
+    counters.forEach(el => counterObserver.observe(el));
+}
 
 function animateCounter(el) {
-    const text = el.textContent;
-    const match = text.match(/^([\d,]+)/);
-    if (!match) return;
+    const target = parseInt(el.dataset.target || el.textContent.replace(/,/g, ''));
+    if (isNaN(target)) return;
 
-    const target = parseInt(match[1].replace(/,/g, ''));
-    const suffix = text.replace(match[1], '');
-    const duration = 1500;
+    const duration = 2000;
     const startTime = performance.now();
+    const finalLarge = target >= 1000;
 
     function update(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
+        const eased = 1 - Math.pow(1 - progress, 4); // Stronger ease-out
         const current = Math.floor(eased * target);
 
-        if (target >= 1000) {
-            el.textContent = current.toLocaleString('en-IN') + suffix;
+        if (finalLarge) {
+            el.textContent = current.toLocaleString('en-IN');
         } else {
-            el.textContent = current + suffix;
+            el.textContent = current;
         }
 
         if (progress < 1) {
             requestAnimationFrame(update);
         } else {
-            el.textContent = text;
+            el.textContent = finalLarge ? target.toLocaleString('en-IN') : target;
         }
     }
 
     requestAnimationFrame(update);
 }
+
+// Initialize counters
+initCounters();
 
 // ===== FLOATING PARTICLES IN HERO =====
 function createParticles() {
@@ -282,6 +285,12 @@ const translations = [
     { sel: '.about-intro-text p:nth-of-type(2)', mr: 'गेल्या काही वर्षांत त्यांनी <strong>1,000 पेक्षा जास्त व्हिडिओज</strong> तयार करून <strong>2 बिलियन+ व्ह्यूज</strong> मिळवले आहेत. भारतातील सर्वात मोठ्या ब्रँड्ससोबत — Prime Video, Disney Hotstar, Zomato, Cred, Realme सोबत यशस्वी कोलॅबोरेशन्स केले आहेत.', en: 'Over the past few years, he has created <strong>over 1,000 videos</strong> and garnered <strong>2 billion+ views</strong>. He has successfully collaborated with some of India\'s biggest brands — Prime Video, Disney Hotstar, Zomato, Cred, Realme.' },
     { sel: '.about-intro-text p:nth-of-type(3)', mr: '500K+ लोकांचा कम्युनिटी उभा करून सुशांत आज हजारो तरुणांना कंटेंट क्रिएशनची प्रोफेशनल दिशा देत आहेत. आता ते त्यांचा संपूर्ण अनुभव या कोर्सद्वारे तुमच्यापर्यंत आणत आहेत.', en: 'Having built a community of 500K+ people, Sushant is now providing professional direction in content creation to thousands of youth. He is now bringing his entire experience to you through this course.' },
     { sel: '.follow-btn span:not([class])', mr: 'Instagram वर Follow करा', en: 'Follow on Instagram' },
+
+    // About Stats
+    { sel: '.about-stats .stat-box:nth-child(1) .stat-label', mr: 'ब्रँड कोलॅबोरेशन्स', en: 'Brand Deals' },
+    { sel: '.about-stats .stat-box:nth-child(2) .stat-label', mr: 'एकूण व्ह्यूज', en: 'Total Views' },
+    { sel: '.about-stats .stat-box:nth-child(3) .stat-label', mr: 'व्हिडिओ तयार केले', en: 'Videos Created' },
+    { sel: '.about-stats .stat-box:nth-child(4) .stat-label', mr: 'कम्युनिटी', en: 'Community' },
 
     // Video section
     { sel: '.video-section .section-title', mr: 'कोर्स बद्दल जाणून घ्या', en: 'Learn About the Course' },
